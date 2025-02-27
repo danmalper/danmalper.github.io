@@ -20,6 +20,7 @@
         nav {
             text-align: center;
             padding: 10px;
+            background: #ddd;
         }
         nav a {
             margin: 0 15px;
@@ -34,6 +35,12 @@
             background: white;
             padding: 20px;
         }
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -42,6 +49,14 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -49,23 +64,33 @@
         <p>Opiniones, libros y análisis sobre distintos temas</p>
     </header>
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#articulos">Artículos</a>
-        <a href="#libros">Libros</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#" onclick="showSection('inicio')">Inicio</a>
+        <a href="#" onclick="showSection('articulos')">Artículos</a>
+        <a href="#" onclick="showSection('libros')">Libros</a>
+        <a href="#" onclick="showSection('sobre-mi')">Sobre mí</a>
+        <a href="#" onclick="showSection('contacto')">Contacto</a>
     </nav>
     <div class="container">
-        <h2 id="inicio">Bienvenido a mi blog</h2>
-        <p>Publicaré artículos sobre diversos temas, análisis de libros y mis opiniones sobre la actualidad.</p>
-        <h2 id="articulos">Artículos recientes</h2>
-        <p>Aquí aparecerán mis últimos artículos.</p>
-        <h2 id="libros">Libros que estoy leyendo</h2>
-        <p>Comentarios y análisis de libros.</p>
-        <h2 id="sobre-mi">Sobre mí</h2>
-        <p>Información sobre quién soy y qué me motiva a escribir.</p>
-        <h2 id="contacto">Contacto</h2>
-        <p>Si quieres escribirme, aquí puedes encontrarme.</p>
+        <section id="inicio" class="active">
+            <h2>Bienvenido a mi blog</h2>
+            <p>Publicaré artículos sobre diversos temas, análisis de libros y mis opiniones sobre la actualidad.</p>
+        </section>
+        <section id="articulos">
+            <h2>Artículos recientes</h2>
+            <p>Aquí aparecerán mis últimos artículos.</p>
+        </section>
+        <section id="libros">
+            <h2>Libros que estoy leyendo</h2>
+            <p>Comentarios y análisis de libros.</p>
+        </section>
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Información sobre quién soy y qué me motiva a escribir.</p>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Si quieres escribirme, aquí puedes encontrarme.</p>
+        </section>
     </div>
     <footer>
         <p>&copy; 2025 Daniel Malago Perianez - Todos los derechos reservados</p>
