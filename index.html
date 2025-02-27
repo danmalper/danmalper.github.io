@@ -35,12 +35,6 @@
             background: white;
             padding: 20px;
         }
-        section {
-            display: none;
-        }
-        section.active {
-            display: block;
-        }
         footer {
             text-align: center;
             padding: 10px;
@@ -49,14 +43,6 @@
             margin-top: 20px;
         }
     </style>
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -64,36 +50,19 @@
         <p>Opiniones, libros y análisis sobre distintos temas</p>
     </header>
     <nav>
-       <a href="index.html">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="articulos.html">Artículos</a>
         <a href="libros.html">Libros</a>
         <a href="sobre-mi.html">Sobre mí</a>
         <a href="contacto.html">Contacto</a>
     </nav>
     <div class="container">
-        <section id="inicio" class="active">
-            <h2>Bienvenido a mi blog</h2>
-            <p>Publicaré artículos sobre diversos temas, análisis de libros y mis opiniones sobre la actualidad.</p>
-        </section>
-        <section id="articulos">
-            <h2>Artículos recientes</h2>
-            <p>Aquí aparecerán mis últimos artículos.</p>
-        </section>
-        <section id="libros">
-            <h2>Libros que estoy leyendo</h2>
-            <p>Comentarios y análisis de libros.</p>
-        </section>
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Información sobre quién soy y qué me motiva a escribir.</p>
-        </section>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Si quieres escribirme, aquí puedes encontrarme.</p>
-        </section>
+        <h2>Bienvenido a mi blog</h2>
+        <p>Publicaré artículos sobre diversos temas, análisis de libros y mis opiniones sobre la actualidad.</p>
     </div>
     <footer>
         <p>&copy; 2025 Daniel Malago Perianez - Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
+
